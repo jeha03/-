@@ -107,17 +107,17 @@
 
     <div class="payment-container">
         <h2 class="text-center text-lg font-semibold mb-4">{{ __('Оплата через Interkassa') }}</h2>
-        <form id="paymentForm">
+        <form id="paymentForm" action="{{ route('payment.process') }}" method="POST">
             @csrf
 
             <!-- Поле выбора сервера -->
             <div class="mb-4">
                 <label for="select_server" class="block text-sm font-medium text-gray-700">{{ __('Выберите сервер') }}</label>
-                <select id="select_server" class="form-select">
-                    <option selected>{{ __('messages.payments_select_server') }}</option>
+                <select name="server_id" id="select_server" class="form-select" required>
+                    <option value="" disabled selected>{{ __('messages.payments_select_server') }}</option>
                     @if(isset($arrayServersOnlyNameAndId))
                         @foreach($arrayServersOnlyNameAndId as $arr)
-                            <option value={{$arr[0]}}>{{$arr[1]}}</option>
+                            <option value="{{ $arr[0] }}">{{ $arr[1] }}</option>
                         @endforeach
                     @endif
                 </select>
@@ -126,7 +126,7 @@
             <!-- Поле ввода ника персонажа -->
             <div class="mb-4">
                 <label for="char_name" class="block mb-2 text-sm font-medium text-gray-900">{{ __('Введите ник персонажа') }}</label>
-                <input type="text" id="char_name" class="form-input" placeholder="Введите ник" required>
+                <input type="text" name="char_name" id="char_name" class="form-input" placeholder="Введите ник" required>
             </div>
 
             <!-- Поле суммы -->
@@ -138,7 +138,7 @@
             <!-- Поле выбора валюты -->
             <div class="mb-4">
                 <label for="currency" class="block text-sm font-medium text-gray-700">{{ __('Валюта') }}</label>
-                <select name="currency" id="currency" class="form-select">
+                <select name="currency" id="currency" class="form-select" required>
                     <option value="UAH">UAH</option>
                     <option value="USD">USD</option>
                 </select>
@@ -150,7 +150,7 @@
                 <input type="text" name="description" id="description" class="form-input" placeholder="Оплата за услуги" value="Оплата за услуги" required>
             </div>
 
-            <button type="button" class="button w-full" id="submitPayment">{{ __('Оплатить') }}</button>
+            <button type="submit" class="button w-full">{{ __('Оплатить') }}</button>
         </form>
 
         <div class="payment-logos">
@@ -164,47 +164,5 @@
             <p><a href="{{ route('useragreement') }}">{{ __('messages.useragreement_title') }}</a></p>
         </div>
     </div>
-
-    <script src="{{ asset('/js/jquery-2.1.4.min.js') }}"></script>
-
-    <script>
-        $(document).ready(function() {
-            $('#submitPayment').click(function() {
-                var char_name = $('#char_name').val();
-                var select_server_id = $('#select_server').val();
-                var amount = $('#amount').val();
-                var currency = $('#currency').val();
-                var description = $('#description').val();
-
-                // Добавить проверку на пустые поля, если требуется
-
-                if(select_server_id && char_name && amount && currency) {
-                    // Отправка данных на сервер для обработки
-                    $.ajax({
-                        url: '{{ route("payment.create") }}',
-                        method: 'POST',
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                            server_id: select_server_id,
-                            char_name: char_name,
-                            amount: amount,
-                            currency: currency,
-                            description: description
-                        },
-                        success: function(response) {
-                            // Обработка успешного ответа
-                            window.location.href = response.redirect_url;
-                        },
-                        error: function(error) {
-                            // Обработка ошибки
-                            alert('Произошла ошибка. Попробуйте еще раз.');
-                        }
-                    });
-                } else {
-                    alert('Пожалуйста, заполните все поля');
-                }
-            });
-        });
-    </script>
 
 @endsection
