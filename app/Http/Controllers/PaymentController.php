@@ -50,27 +50,5 @@ class PaymentController extends Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
-    public function processPayment(Request $request)
-    {
-        $data = [
-            'ik_co_id' => 'YOUR_CO_ID',
-            'ik_pm_no' => uniqid(),
-            'ik_am' => $request->input('amount'),
-            'ik_cur' => $request->input('currency'),
-            'ik_desc' => $request->input('description'),
-        ];
-
-        $data['ik_sign'] = $this->generateSignature($data);
-
-        return redirect()->away('https://sci.interkassa.com?' . http_build_query($data));
-    }
-
-    private function generateSignature($data)
-    {
-        $secretKey = 'YOUR_SECRET_KEY';
-        ksort($data, SORT_STRING);
-        array_push($data, $secretKey);
-        return base64_encode(md5(implode(':', $data), true));
-    }
 
 }

@@ -80,23 +80,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px; /* Adjust the space between the logos */
+            gap: 20px;
             margin-top: 1rem;
         }
 
         .payment-logos img {
-            width: 60px; /* Adjust the size of the logos */
+            width: 60px;
         }
 
         .payment-policies {
             text-align: center;
             margin-top: 1rem;
             font-size: 0.8rem;
-            color: #6b7280; /* Gray text */
+            color: #6b7280;
         }
 
         .payment-policies a {
-            color: #6b7280; /* Gray link color */
+            color: #6b7280;
             text-decoration: none;
         }
 
@@ -108,13 +108,20 @@
     <div class="payment-container">
         <h2 class="text-center text-lg font-semibold mb-4">{{ __('Оплата через Interkassa') }}</h2>
         <form id="paymentForm" action="{{ route('payment.process') }}" method="POST">
-            @csrf
+
+
+        @csrf
+            <input type="hidden" name="server_id" id="server_id">
+            <input type="hidden" name="char_name_hidden" id="char_name_hidden">
+            <input type="hidden" name="amount_hidden" id="amount_hidden">
+            <input type="hidden" name="currency_hidden" id="currency_hidden">
+            <input type="hidden" name="description_hidden" id="description_hidden">
 
             <!-- Поле выбора сервера -->
             <div class="mb-4">
                 <label for="select_server" class="block text-sm font-medium text-gray-700">{{ __('Выберите сервер') }}</label>
-                <select name="server_id" id="select_server" class="form-select" required>
-                    <option value="" disabled selected>{{ __('messages.payments_select_server') }}</option>
+                <select id="select_server" class="form-select">
+                    <option selected>{{ __('messages.payments_select_server') }}</option>
                     @if(isset($arrayServersOnlyNameAndId))
                         @foreach($arrayServersOnlyNameAndId as $arr)
                             <option value="{{ $arr[0] }}">{{ $arr[1] }}</option>
@@ -126,7 +133,7 @@
             <!-- Поле ввода ника персонажа -->
             <div class="mb-4">
                 <label for="char_name" class="block mb-2 text-sm font-medium text-gray-900">{{ __('Введите ник персонажа') }}</label>
-                <input type="text" name="char_name" id="char_name" class="form-input" placeholder="Введите ник" required>
+                <input type="text" id="char_name" class="form-input" placeholder="Введите ник" required>
             </div>
 
             <!-- Поле суммы -->
@@ -138,7 +145,7 @@
             <!-- Поле выбора валюты -->
             <div class="mb-4">
                 <label for="currency" class="block text-sm font-medium text-gray-700">{{ __('Валюта') }}</label>
-                <select name="currency" id="currency" class="form-select" required>
+                <select name="currency" id="currency" class="form-select">
                     <option value="UAH">UAH</option>
                     <option value="USD">USD</option>
                 </select>
@@ -150,7 +157,7 @@
                 <input type="text" name="description" id="description" class="form-input" placeholder="Оплата за услуги" value="Оплата за услуги" required>
             </div>
 
-            <button type="submit" class="button w-full">{{ __('Оплатить') }}</button>
+            <button type="button" class="button w-full" id="submitPayment">{{ __('Оплатить') }}</button>
         </form>
 
         <div class="payment-logos">
@@ -164,5 +171,20 @@
             <p><a href="{{ route('useragreement') }}">{{ __('messages.useragreement_title') }}</a></p>
         </div>
     </div>
+
+    <script src="{{ asset('/js/jquery-2.1.4.min.js') }}"></script>
+
+    <script>
+        document.getElementById('submitPayment').addEventListener('click', function() {
+            document.getElementById('server_id').value = document.getElementById('select_server').value;
+            document.getElementById('char_name_hidden').value = document.getElementById('char_name').value;
+            document.getElementById('amount_hidden').value = document.getElementById('amount').value;
+            document.getElementById('currency_hidden').value = document.getElementById('currency').value;
+            document.getElementById('description_hidden').value = document.getElementById('description').value;
+
+            // Отправка формы
+            document.getElementById('paymentForm').submit();
+        });
+    </script>
 
 @endsection
