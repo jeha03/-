@@ -1,0 +1,309 @@
+@media (max-width: 1570px) {
+  .topPanel .menu li a {
+    padding: 0px 20px;
+  }
+
+  .topPanel .menu li:after, .topPanel .menu .dropDown-menu {
+    width: calc(100% + 20px);
+    left: -10px;
+  }
+
+  .socBlock {
+    left: 10px;
+  }
+
+  .toTop {
+    right: 10px;
+  }
+}
+@media (min-width: 1240px) {
+  .topSocBlock, .topButton {
+    display: none;
+  }
+}
+@media (max-width: 1239px) {
+  .socBlock, .toTop {
+    display: none;
+  }
+
+  .wrapper {
+    padding: 0px 10px;
+  }
+
+  .topPanel-menu {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .topPanel .menu li:after, .topPanel .menu .dropDown-menu {
+    left: 0px;
+    width: 100%;
+  }
+
+  .topPanel {
+    height: 50px;
+  }
+  .topPanel .topPanel-logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    text-align: center;
+  }
+  .topPanel .topPanel-logo img {
+    height: 40px;
+  }
+  .topPanel .menu {
+    margin-left: 0px;
+    display: block;
+    width: 100%;
+  }
+  .topPanel .menu li {
+    height: auto;
+    line-height: 1;
+    width: 100%;
+    padding: 20px 20px;
+  }
+  .topPanel .menu li a {
+    font-size: 20px;
+  }
+  .topPanel .topSocBlock {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    background: none;
+    right: 30px;
+    left: auto;
+    z-index: 0;
+  }
+  .topPanel .topPanel-button {
+    top: 70px;
+    width: 100%;
+  }
+  .topPanel .topPanel-button .loginButton {
+    width: 100%;
+    border-radius: 0px;
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .topPanel .topPanel-button .downloadButton {
+    margin-left: 0px;
+    height: auto;
+    line-height: 1;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .topPanel .menu .dropDown-menu {
+    position: relative;
+    padding: 20px 0px 0px 40px;
+  }
+  .topPanel .menu .dropDown-menu li {
+    text-align: left;
+  }
+
+  .nav {
+    width: 320px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: -320px;
+    transition: 0.5s;
+    display: block;
+    padding-top: 250px;
+    z-index: 1;
+  }
+  .nav.active {
+    left: 0;
+  }
+
+  .logo {
+    top: 150px;
+  }
+
+  .serverBlock {
+    top: 330px;
+  }
+
+  .header {
+    height: 650px;
+  }
+
+  .contentHome {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .newsBlock, .eventsBlock {
+    width: 100%;
+  }
+
+  .newsBlock {
+    margin-bottom: 30px;
+  }
+
+  .content-title {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 882px) {
+  .blockPvp {
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  .blockExp, .blockUpdate {
+    width: 50%;
+    background-size: cover;
+  }
+}
+@media (max-width: 762px) {
+  body {
+    background: url(../images/body-bg-top.jpg) center top no-repeat, url(../images/body-bg-bottom.jpg) center bottom no-repeat;
+    background-color: #c1c8bd;
+  }
+
+  .logo {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  .stars {
+    display: none;
+  }
+
+  .serverBlock {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    left: 0px;
+  }
+
+  .serverBlock .server {
+    width: 200px;
+  }
+
+  .streamBlock > a {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .news {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .eventsBlock .content-title {
+    color: #2b2e34;
+  }
+
+  .content-title {
+    padding: 0px;
+  }
+
+  .contentHome {
+    margin: 30px 0px 30px 0px;
+  }
+
+  .blockBorder {
+    padding-bottom: 40px;
+  }
+
+  table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  table tr td {
+    width: 50%;
+  }
+}
+@media (max-width: 585px) {
+  .header {
+    height: 100%;
+    padding-top: 300px;
+  }
+
+  .serverBlock {
+    top: auto;
+  }
+
+  .serverBlock .server {
+    width: 200px;
+    padding-top: 220px;
+    background-size: 130%;
+  }
+
+  .blockExp, .blockUpdate {
+    width: 100%;
+  }
+
+  .blockExp {
+    display: flex;
+  }
+
+  .blockExp a {
+    width: 50%;
+    height: 200px;
+    background-size: cover;
+  }
+
+  .blockPvp {
+    padding-bottom: 0px;
+    height: 150px;
+    padding-top: 100px;
+  }
+
+  .blockUpdate {
+    height: 200px;
+    padding-top: 110px;
+  }
+
+  .buttonPlay {
+    display: none;
+  }
+
+  .contentHome h3 {
+    margin-bottom: 0px;
+  }
+
+  .footerTopBlock {
+    padding: 30px 0px;
+  }
+
+  .footerTopBlock a {
+    margin: 0px 20px;
+  }
+
+  .topPanel .topSocBlock {
+    right: 0px;
+  }
+
+  .modal_div {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0px;
+    left: 0;
+    padding: 25px 20px 55px 20px;
+    top: 10% !important;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  table tr td {
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 30px 10px;
+  }
+}

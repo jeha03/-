@@ -1,0 +1,541 @@
+@media (max-width: 1570px) {
+  .topPanel .menu li a {
+    padding: 0px 20px;
+  }
+
+  .topPanel .menu li:after, .topPanel .menu .dropDown-menu {
+    width: calc(100% + 20px);
+    left: -10px;
+  }
+
+  .socBlock {
+    left: 10px;
+  }
+
+
+}
+@media (min-width: 1240px) {
+  .topSocBlock, .topButton {
+    display: none;
+  }
+}
+@media (max-width: 1239px) {
+  .socBlock, .toTop {
+    display: none;
+  }
+
+  .topimg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px; /* отрегулируйте значение, чтобы опустить картинку */
+    margin-left: 20%;
+  }
+
+  .toTop {
+    right: 10px;
+  }
+
+  .wrapper {
+    padding: 0px 0px;
+  }
+
+  .topPanel-menu {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  .topPanel .menu li:after, .topPanel .menu .dropDown-menu {
+    left: 0px;
+    width: 100%;
+  }
+
+  .topPanel {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically if needed */
+    position: fixed;
+    width: 95%;
+    top: 0;
+    margin: 1px auto 0 auto; /* Center horizontally and add top margin */
+    z-index: 15;
+    transition: 0.3s;
+    height: 50px;
+  }
+  .topPanel .topPanel-logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    text-align: center;
+  }
+  .topPanel .topPanel-logo img {
+    height: 50px;
+    position: relative;
+    left: 20px;
+  }
+  .topPanel .menu {
+    margin-left: 0px;
+    display: block;
+    width: 100%;
+  }
+  .topPanel .menu li {
+    height: auto;
+    line-height: 1;
+    width: 100%;
+    padding: 20px 20px;
+  }
+  .topPanel .menu li a {
+    font-size: 20px;
+  }
+  .topPanel .topSocBlock {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    background: none;
+    right: 30px;
+    left: auto;
+    z-index: 0;
+  }
+  .topPanel .topPanel-button {
+    display: grid;
+    top: 70px;
+    width: 100%;
+    margin-top: 20%;
+  }
+
+  .topPanel .topPanel-button .loginButton {
+    width: 100%;
+    border-radius: 0px;
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .topPanel .topPanel-button .downloadButton {
+    margin-left: 0px;
+    height: auto;
+    line-height: 1;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .topPanel .menu .dropDown-menu {
+    position: relative;
+    padding: 20px 0px 0px 40px;
+  }
+  .topPanel .menu .dropDown-menu li {
+    text-align: left;
+  }
+
+  .nav {
+    width: 220px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: -320px;
+    transition: 0.5s;
+    display: block;
+    /*padding-top: 250px;*/
+    z-index: 1;
+  }
+  .nav.active {
+    width: 100%;
+    left: 0;
+  }
+
+  .logo {
+    top: 150px;
+  }
+
+  .serverBlock {
+    top: 330px;
+  }
+
+  .header {
+    height: 650px;
+  }
+
+  .contentHome {
+    width: 95%;
+  }
+
+  a.button9 {
+    position: relative;
+    display: inline-block;
+    width: 90%; /* Установите желаемую ширину кнопки */
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    color: #ffaa00;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+    user-select: none;
+    padding: 1em 2em;
+    outline: none;
+    border-radius: 3px / 100%;
+    background-image:
+     linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+     linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+     linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+     linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+     linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+     linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+    background-repeat: no-repeat;
+    background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+    background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+    box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+    text-align: center; /* Центрирование текста в кнопке */
+    line-height: 1.5; /* Выравнивание текста по высоте кнопки */
+  }
+  a.button9:hover {
+    transition: .5s linear;
+    background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  }
+  a.button9:active {
+    top: 1px;
+  }
+
+}
+@media (min-width: 1024px) {
+  .newFeed{
+    width: 100%;
+  }
+.newsFeed {
+  width: 100%;
+  height: 100%;
+}
+}
+@media (max-width: 1024px) {
+  .newsBlock, .eventsBlock {
+    width: 100%;
+  }
+
+  .newsBlock {
+    margin-bottom: 1px;
+  }
+
+  .content-title {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 882px) {
+  .blockPvp {
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  .blockExp, .blockUpdate {
+    width: 50%;
+    background-size: cover;
+  }
+}
+@media (max-width: 762px) {
+  body {
+    width: 100%;
+    /*background: url(../images/body-bg-top.jpg) center top no-repeat, url(../images/body-bg-bottom.jpg) center bottom no-repeat;
+    background-color: #c1c8bd;*/
+  }
+
+
+  .px-6 {
+        width: 100%;
+        padding-left: inherit;
+        padding-right: inherit;
+        inline-size: auto;
+        margin: auto;
+  }
+
+  .p-6 {
+    display: ruby-text;
+    width: 100%;
+    padding: 1.5rem;
+    margin: auto;
+}
+.dashboardchars {
+  display: table-cell;
+  word-break: break-all;
+  inline-size: auto;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+  .logo {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  .stars {
+    display: none;
+  }
+
+  .serverBlock {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    left: 0px;
+  }
+
+  .serverBlock .server {
+    width: 200px;
+  }
+
+  .streamBlock > a {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .news {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .eventsBlock .content-title {
+    color: white;
+  }
+
+  .content-title {
+    padding: 0px;
+  }
+
+  .contentHome {
+    margin: 30px 0px 30px 0px;
+  }
+
+  .blockBorder {
+    padding-bottom: 40px;
+  }
+
+  table tr {
+
+    flex-wrap: wrap;
+  }
+  table tr td {
+    width: 50%;
+  }
+}
+@media (max-width: 585px) {
+  .header {
+    height: 100%;
+    padding-top: 300px;
+  }
+
+  .serverBlock {
+    display: grid;
+        top: 100%;
+  }
+
+  .serverBlock .server {
+    width: 200px;
+    padding-top: 220px;
+    background-size: 130%;
+  }
+
+  .blockExp, .blockUpdate {
+    width: 100%;
+  }
+
+  .blockExp {
+    display: flex;
+  }
+
+  .blockExp a {
+    width: 50%;
+    height: 200px;
+    background-size: cover;
+  }
+
+  .blockPvp {
+    padding-bottom: 0px;
+    height: 100%;
+    padding-top: 80px;
+  }
+
+  .blockUpdate {
+    height: 200px;
+    padding-top: 110px;
+  }
+
+  .buttonPlay {
+    display: none;
+  }
+
+  .contentHome h3 {
+    margin-bottom: 0px;
+  }
+    .contentHome h1 {
+        font-size: 60px;
+        margin-bottom: 0px;
+    }
+
+  .footerTopBlock {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .footerTopBlock a {
+    margin: 0px 0px;
+  }
+
+  .topPanel .topSocBlock {
+    right: 0px;
+  }
+
+  .modal_div {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0px;
+    left: 0;
+    padding: 25px 20px 55px 20px;
+    top: 10% !important;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  table tr td {
+    width: 100%;
+  }
+
+  .main-content {
+    margin-top: 50px;
+    padding: 30px 10px;
+  }
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+  .toTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 40px;
+    bottom: 2%; /* Изменено на bottom для примера, можно настроить по вашему усмотрению */
+    width: 54px; /* Уменьшена ширина, чтобы сделать круглую кнопку */
+    height: 54px; /* Высота изменена на 54px, чтобы сделать круглую кнопку */
+    background-color: #c4b354; /* Цвет фона кнопки */
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 50%; /* Делает кнопку круглой */
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+    opacity: 0; /* Сначала кнопка скрыта */
+    visibility: hidden; /* Сначала кнопка скрыта */
+    margin-top: 300px;
+  }
+  /* Стиль для стрелочки внутри кнопки */
+  .toTop:after {
+    content: "";
+    background: url(../images/arrow-v.png) no-repeat center center; /* Устанавливает фоновое изображение стрелочки */
+    width: 24px; /* Ширина стрелочки */
+    height: 24px; /* Высота стрелочки */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg); /* Центрирует и поворачивает стрелочку */
+    opacity: 1; /* Полупрозрачность стрелочки */
+    transition: opacity 0.3s; /* Плавный переход для прозрачности */
+  }
+
+  .toTop svg {
+    width: 24px; /* Размер иконки (подставьте свой размер) */
+    height: 24px; /* Размер иконки (подставьте свой размер) */
+    fill: #ffffff; /* Цвет иконки (можно изменить) */
+    transition: fill 0.3s;
+  }
+
+  .toTop:hover {
+    background-color: #a58b16; /* Изменение цвета фона при наведении */
+  }
+
+  .toTop.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .toTop:hover:after {
+    opacity: 1;
+  }
+
+  .resp-tab {
+    border-radius: 5px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+}
+.resp-tab th, .resp-tab td {
+    padding: 10px 20px;
+    font-size: 13px;
+    border: none;
+    font-family: Verdana, sans-serif;
+    border: 1px solid #337AB7;
+    vertical-align: top;
+}
+.resp-tab th {
+    color: #FFF;
+    background: #337AB7;
+    font-weight: bold;
+    border: 1px solid #1a4a73;
+    text-transform: uppercase;
+    text-align: center;
+}
+.resp-tab tr:nth-child(even) {
+    background: #edf7ff;
+}
+.resp-tab td span {
+    background: #337AB7;
+    color: #FFF;
+    display: none;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@media(max-width: 768px) {
+    .resp-tab thead {
+        display: none;
+    }
+    .resp-tab tr {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .resp-tab td {
+        margin: 0 -1px -1px 0;
+        padding-top: 35px;
+        position: relative;
+        width: 50%;
+    }
+    .resp-tab td span {
+        display: block;
+    }
+}
+@media(max-width: 480px) {
+    .resp-tab td {
+        width: 100%;
+    }
+}
+.imagelangmobiledashboard {
+  width: 100%;
+  display: ruby;
+  margin-left: -22%;
+}
+}
